@@ -1,0 +1,72 @@
+2020-04-30 23:00:06 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: pim)
+2020-04-30 23:00:06 [scrapy.utils.log] INFO: Versions: lxml 4.5.0.0, libxml2 2.9.9, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 (default, Jan  8 2020, 20:23:39) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1  11 Sep 2018), cryptography 2.8, Platform Windows-10-10.0.18362-SP0
+2020-04-30 23:00:06 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'pim', 'LOG_FILE': 'logs\\pim\\jobs\\task_1_2020-04-30T23_00_00.log', 'NEWSPIDER_MODULE': 'pim.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['pim.spiders']}
+2020-04-30 23:00:06 [scrapy.extensions.telnet] INFO: Telnet Password: 8b3b15fcbfc98cf5
+2020-04-30 23:00:06 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-30 23:00:06 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-30 23:00:06 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-30 23:00:27 [twisted] CRITICAL: Unhandled error in Deferred:
+2020-04-30 23:00:28 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\pymongo\srv_resolver.py", line 73, in _resolve_uri
+    lifetime=self.__connect_timeout)
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\dns\resolver.py", line 1102, in query
+    lifetime)
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\dns\resolver.py", line 992, in query
+    timeout = self._compute_timeout(start, lifetime)
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\dns\resolver.py", line 799, in _compute_timeout
+    raise Timeout(timeout=duration)
+dns.exception.Timeout: The DNS operation timed out after 20.000261545181274 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\twisted\internet\defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\scrapy\crawler.py", line 80, in crawl
+    self.engine = self._create_engine()
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\scrapy\crawler.py", line 105, in _create_engine
+    return ExecutionEngine(self, lambda _: self.stop())
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\scrapy\core\engine.py", line 70, in __init__
+    self.scraper = Scraper(crawler)
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\scrapy\core\scraper.py", line 71, in __init__
+    self.itemproc = itemproc_cls.from_crawler(crawler)
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\scrapy\middleware.py", line 53, in from_crawler
+    return cls.from_settings(crawler.settings, crawler)
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\scrapy\middleware.py", line 35, in from_settings
+    mw = create_instance(mwcls, settings, crawler)
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\scrapy\utils\misc.py", line 144, in create_instance
+    return objcls(*args, **kwargs)
+  File "C:\Users\islam\pim\pim\pipelines.py", line 13, in __init__
+    client = pymongo.MongoClient("mongodb+srv://MaherBen:MaherBen@cluster0-untz6.mongodb.net/test?retryWrites=true&w=majority")
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\pymongo\mongo_client.py", line 622, in __init__
+    connect_timeout=timeout)
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\pymongo\uri_parser.py", line 463, in parse_uri
+    nodes = dns_resolver.get_hosts()
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\pymongo\srv_resolver.py", line 102, in get_hosts
+    _, nodes = self._get_srv_response_and_hosts(True)
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\pymongo\srv_resolver.py", line 83, in _get_srv_response_and_hosts
+    results = self._resolve_uri(encapsulate_errors)
+  File "c:\users\islam\.conda\envs\virtual_workspace\lib\site-packages\pymongo\srv_resolver.py", line 79, in _resolve_uri
+    raise ConfigurationError(str(exc))
+pymongo.errors.ConfigurationError: The DNS operation timed out after 20.000261545181274 seconds

@@ -1,0 +1,14 @@
+setup.py
+pim/__init__.py
+pim/items.py
+pim/middlewares.py
+pim/pipelines.py
+pim/scrapydweb_settings_v10.py
+pim/settings.py
+pim/spiders/__init__.py
+pim/spiders/jobs.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt
